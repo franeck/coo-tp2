@@ -19,5 +19,12 @@ const delAsync = promisify(client.del).bind(client)
 export {
   getAsync,
   setAsync,
-  delAsync,
+  delAsync
 }
+
+// Usage
+// getAsync(key : string)
+// setAsync(key: string, content: any)
+// delAsync(key: string)
+// Ca retourne des promeses, elles mettent du temps à se réaliser
+// const orders = avait getAsync('orders')

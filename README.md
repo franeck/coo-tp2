@@ -1,63 +1,18 @@
-# TypeScript Express server - Starter
+# TP 2 - Principes POO & Design Patterns
 
-## Get started
+> Franciszek Dobrowolski - AP5 2019-2020 
 
-Ensure you have `make` installed on your system.
+## Question 1
 
-After cloning te repository run:
-```bash
-make init
-```
+Ecrire les routes permettant de réaliser un CRUD sur des commandes que l’on nommera “orders”. Le endpoint pour ces routes sera “/orders”.
 
-Now you can start|stop|restart your server by running:
-```bash
-make start|stop|restart
-```
+> Pour le moment aucun type particulier n’est demandé pour nos commandes. On récupère tout simplement les données du stockage Redis.
+> Pour la route de création, l’id et la date de création de la commande sont créés à la volée avant enregistrement, ces informations ne figurent donc pas dans la requête.
 
-Your server will listen by default on port `3000` of your `$DOCKER_HOST`
+## Réponses
 
-You can access the server logs by running:
-```bash
-make log
-```
+Pas de réponses spécifiques pour cette quesiton.
 
-If you want to stop and destroy your docker containers:
-```bash
-make down
-```
+## Commentaires
 
-Launch dependencies install with:
-```bash
-make install
-```
-
-## Running a command in a running container
-
-To run a command in your container, run the following:
-```bash
-docker exec <container_name> <command>
-```
-eg:
-
-```bash
-docker exec starter-back_server sudo rm -rf /
-```
-
-## Running a command in a stopped/failed container
-
-You will have to run a command through `docker-compose`:
-```bash
-docker-compose run --rm <service_name> <command>
-```
-eg:
-
-```bash
-docker-compose run --rm node npm install --save-dev typescript
-```
-
-## Access your container
-
-To connect to a container, run:
-```bash
-docker exec -ti <container_name> sh
-```
+La correction de pour cette question a été fournie en cours.
