@@ -2,17 +2,20 @@
 
 > Franciszek Dobrowolski - AP5 2019-2020 
 
-## Question 1
+## Question 2
 
-Ecrire les routes permettant de réaliser un CRUD sur des commandes que l’on nommera “orders”. Le endpoint pour ces routes sera “/orders”.
+Grâce à TypeScript on peut créer nos propres types, ainsi créez un type pour nos commandes.  
 
-> Pour le moment aucun type particulier n’est demandé pour nos commandes. On récupère tout simplement les données du stockage Redis.
-> Pour la route de création, l’id et la date de création de la commande sont créés à la volée avant enregistrement, ces informations ne figurent donc pas dans la requête.
+Un principe de conception favorise le découplage et les potentiels futurs “refactoring” du modèle des commandes, nommez ce principe et appliquez le ici.
 
 ## Réponses
 
-Pas de réponses spécifiques pour cette quesiton.
+Le contenu de la commande a été modélisé en tant qu'ensemble de classes dans le dossier **model**.
+
+Dans la deuxième partie on applique le principe **d'inversion des dépendances**. Il s'agit de la partie "I" du SOLID. Selon ce principe, il faut dépendre des abstractions, pas des implémentations. Ainsi notre commande sera une implémentation du type commande. En conséquence, on pourra modifier le modèle de commande sans affecter le contrôleur.
 
 ## Commentaires
 
-La correction de pour cette question a été fournie en cours.
+La classe OrdersController qui est un contrôleur CRUD, ne dépend que du premier niveau de la structure de la commande. Elle n'a pas besoin d'accéder aux sous composants. Ainsi la seule interface qui lui est nécessaire est celle de l'objet principal Order. Ses sous composants, du point de vue du contrôleur, peuvent être du *any*.
+
+
