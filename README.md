@@ -2,19 +2,18 @@
 
 > Franciszek Dobrowolski - AP5 2019-2020 
 
-## Question 5
+## Question 6
 
-Nous sommes quasiment en présence d’un pattern d’architecture connu destiné aux UI. Nommez ce principe.
-Pour le respecter entièrement nous allons créer une classe Order qui fera office de modèle. Elle prendra en paramètre de constructeur, ce que nous avons créé dans l’énoncé précédent, et contiendra l’interaction avec le stockage Redis.
+Réalisez le diagramme de classe de notre API ainsi finalisée.
 
 ## Réponses
 
-Il s'agit du modèle MVC. 
+![Drag Racing](/Users/Franciszek/github/coo-tp2/TP2-OOC UML.jpg)
 
-La classe Order a déjà été implementée dans les questions précedantes.
+La version en pleine résolution est disponible dans la racine du repository en .jpg et .pdf.
 
 ## Commentaires
 
-Il n'est pas clair pour moi, pourquoi la classe Order devrait comporter l'interaction avec le stockage. La responsabilité du modèle n'est pas de se persister lui-même. Implémenter cette partie dans cette classe serait contradictoire au principe de responsabilité unique.
+Lors de la création du diagramme on peut souvent trouver des points à améliorer. Ici, dans le modèle de la commande, la classe Contact et CarrierContact se ressemblent sauf 3 paramètres. Dans ce cas les deux classes pourraient hériter d'une classe parent pour les paramètres communs, puis l'étendre selon leur besoin spécifique.
 
 
