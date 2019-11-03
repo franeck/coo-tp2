@@ -1,9 +1,7 @@
-import {
-    IOrder as Order
-  } from '../interface/order.interface'
-
+import { IOrder as Order } from '../interface/order.interface'
+import { OrderBuilder } from '../builder/order.builder'
 import { IOrderService } from '../interface/order.service.interface'
-import {IOrderRepository as OrderRepository} from '../interface/order.repository.interface'
+import { IOrderRepository as OrderRepository } from '../interface/order.repository.interface'
 
 export default class OrderService implements IOrderService {
 
@@ -17,11 +15,25 @@ export default class OrderService implements IOrderService {
         return new Promise(async (resolve, reject) => {
             const orders: Order[] = await this.orderRepository.get();
 
-            if(orders !== undefined) {
-                resolve(orders);
-            } else {
+            if(!orders) {
                 reject();
             }
+
+            let anonmisedOrders: Order[] = [];
+
+            orders.forEach((order) => {
+                anonmisedOrders.push(
+                    new OrderBuilder()
+                    .setId(order.id)
+                    .setCreatedAt(order.createdAt)
+                    .setPackages(order.packages)
+                    .setFakeContact()
+                    .setCarrier(order.carrier)
+                    .build()
+                );
+              });
+
+            resolve(anonmisedOrders);
         })
     }
 

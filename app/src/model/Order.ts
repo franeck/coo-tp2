@@ -1,29 +1,37 @@
 import { IOrder } from "../interface/order.interface"
+import { OrderBuilder } from "../builder/order.builder";
 
-class Order implements IOrder{
+export class Order implements IOrder{
     id: number;
     createdAt: Date;
     packages: Package[];
     contact: Contact;
     carrier: Carrier;
+    constructor(oredrBuilder: OrderBuilder) {
+      this.id = oredrBuilder.getId();
+      this.createdAt = oredrBuilder.getCreatedAt();
+      this.packages = oredrBuilder.getPackages();
+      this.contact = oredrBuilder.getContact();
+      this.carrier = oredrBuilder.getCarrier();
+    }
   }
-  class Package {
+  export class Package {
     length: Size;
     width: Size;
     height: Size;
     weight: Size;
     products: Product[]
   }
-  class Size {
+  export class Size {
     unit: string;
     value: number;
   }
-  class Product {
+  export class Product {
     quantity: number;
     label: string;
     ean: string;
   }
-  class Contact {
+  export class Contact {
     firstname: string;
     lastname: string;
     phone: string;
@@ -31,21 +39,20 @@ class Order implements IOrder{
     billingAddress: Address;
     deliveryAddress: Address;
   }
-  class Address {
+  export class Address {
     postalCode: string;
     city: string;
     addressLine1: string;
     addressLine2: string;
   }
-  class Carrier {
+  export class Carrier {
     name: string;
     contact: CarrierContact;
   }
-  class CarrierContact {
+  export class CarrierContact {
     firstname: string;
     lastname: string;
     phone: string;
     mail: string;
     headOfficeAddress: Address;
   }
-  
