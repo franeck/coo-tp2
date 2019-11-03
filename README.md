@@ -2,16 +2,19 @@
 
 > Franciszek Dobrowolski - AP5 2019-2020 
 
-## Question 4
+## Question 5
 
-Lorsque l’on récupère la totalité des commandes, nous aimerions que la partie “contact” soit anonymisée avec des données factices par soucis de sécurité. Un Design Pattern va nous permettre de mieux contrôler les données qui constituent nos commandes. Nommez le et modifiez ainsi le code.
+Nous sommes quasiment en présence d’un pattern d’architecture connu destiné aux UI. Nommez ce principe.
+Pour le respecter entièrement nous allons créer une classe Order qui fera office de modèle. Elle prendra en paramètre de constructeur, ce que nous avons créé dans l’énoncé précédent, et contiendra l’interaction avec le stockage Redis.
 
 ## Réponses
 
-Pour contrôler en détail la construction de notre commade on peut utiliser le Design Pattern "**Builder**". Le builder va se charger de construire l'objet Order. Il implementera une méthode qui servira a générer des donées factices.
+Il s'agit du modèle MVC. 
+
+La classe Order a déjà été implementée dans les questions précedantes.
 
 ## Commentaires
 
-Aucun commentaire additionnel.
+Il n'est pas clair pour moi, pourquoi la classe Order devrait comporter l'interaction avec le stockage. La responsabilité du modèle n'est pas de se persister lui-même. Implémenter cette partie dans cette classe serait contradictoire au principe de responsabilité unique.
 
 
