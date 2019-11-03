@@ -8,7 +8,7 @@ Réalisez le diagramme de classe de notre API ainsi finalisée.
 
 ## Réponses
 
-![Drag Racing](/Users/Franciszek/github/coo-tp2/TP2-OOC UML.jpg)
+![Diagramme UML](https://raw.githubusercontent.com/franeck/tp2-ap5/master/TP2-OOC%20UML.jpg)
 
 La version en pleine résolution est disponible dans la racine du repository en .jpg et .pdf.
 
